@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const API_BASE_URL = process.env.API_URL || "http://localhost:3000";
+const API_BASE_URL = process.env.API_URL;
+if (!API_BASE_URL) {
+  throw new Error("API_URL environment variable is not set. Add it to your .env.local or Vercel project settings.");
+}
 
 export async function GET(
   request: NextRequest,

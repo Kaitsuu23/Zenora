@@ -4,9 +4,6 @@ const nextConfig: NextConfig = {
   experimental: {
     scrollRestoration: false,
   },
-  turbopack: {
-    root: __dirname,
-  },
   images: {
     remotePatterns: [
       {

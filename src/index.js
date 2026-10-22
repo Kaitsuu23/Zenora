@@ -30,7 +30,10 @@ app.disable('x-powered-by');
 app.use(express.json());
 
 app.use(cors({
-  origin: config.corsOrigin === '*' ? true : config.corsOrigin.split(',').map((s) => s.trim()),
+  origin: config.corsOrigin === '*'
+    ? true
+    : config.corsOrigin.split(',').map((s) => s.trim()),
+  credentials: false,
 }));
 
 app.use((req, res, next) => {

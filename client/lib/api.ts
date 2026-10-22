@@ -51,7 +51,13 @@ export function getFriendlyErrorMessage(code?: string, defaultMsg?: string): str
   }
 }
 
-const BACKEND_URL = process.env.API_URL || "http://localhost:3000";
+const BACKEND_URL = process.env.API_URL ?? (() => {
+  if (typeof window === "undefined") {
+    // Server-side: API_URL must be set
+    throw new Error("API_URL environment variable is not set. Add it to your .env.local or Vercel project settings.");
+  }
+  return ""; // client-side always uses /api/proxy, BACKEND_URL unused
+})();
 
 async function fetchFromApi<T>(endpoint: string, options?: RequestInit): Promise<T> {
   const isServer = typeof window === "undefined";

@@ -1,4 +1,4 @@
-# javhd-api
+# Zenora
 
 REST API scraper + Next.js frontend untuk `https://javhd.today/`.
 

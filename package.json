@@ -1,0 +1,27 @@
+{
+  "name": "javhd-api",
+  "version": "1.0.0",
+  "description": "REST API scraper untuk javhd.today menggunakan Express + Axios + Cheerio",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "inspect": "node inspect.js"
+  },
+  "keywords": [
+    "jav",
+    "scraper",
+    "express",
+    "cheerio"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
